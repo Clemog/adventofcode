@@ -36,33 +36,33 @@ const rules = data[0].split("\n");
 const pages = data[1].split("\n");
 
 const isCorrectlyOrdered = (a, b) => {
-  for (const rule of rules) {
-    const [first, second] = rule.split("|").map((num) => +num);
-    if (first === b && second === a) {
-      return false;
-    }
-  }
-  return true;
+	for (const rule of rules) {
+		const [first, second] = rule.split("|").map((num) => +num);
+		if (first === b && second === a) {
+			return false;
+		}
+	}
+	return true;
 };
 
 const isOrdered = (array) => {
-  for (let i = 1; i < array.length; i++) {
-    for (let j = 0; j < i; j++) {
-      if (!isCorrectlyOrdered(array[j], array[i])) {
-        return false;
-      }
-    }
-  }
-  return true;
+	for (let i = 1; i < array.length; i++) {
+		for (let j = 0; j < i; j++) {
+			if (!isCorrectlyOrdered(array[j], array[i])) {
+				return false;
+			}
+		}
+	}
+	return true;
 };
 
 let result = 0;
 for (const page of pages) {
-  const arrayOfPage = page.split(",").map((num) => +num);
-  if (isOrdered(arrayOfPage)) {
-    const middlePage = arrayOfPage[Math.floor(arrayOfPage.length / 2)];
-    result += middlePage;
-  }
+	const arrayOfPage = page.split(",").map((num) => +num);
+	if (isOrdered(arrayOfPage)) {
+		const middlePage = arrayOfPage[Math.floor(arrayOfPage.length / 2)];
+		result += middlePage;
+	}
 }
 
 console.log(result);

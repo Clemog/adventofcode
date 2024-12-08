@@ -1,8 +1,8 @@
 {
-  "name": "2024",
-  "module": "index.ts",
-  "type": "module",
-  "devDependencies": {
-    "@biomejs/biome": "1.9.4"
-  }
+	"name": "2024",
+	"module": "index.ts",
+	"type": "module",
+	"devDependencies": {
+		"@biomejs/biome": "1.9.4"
+	}
 }
